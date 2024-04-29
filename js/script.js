@@ -4,23 +4,23 @@ createApp({
     data() {
         return {
             email: [],
+            counter: 0,
         };
     },
     created(){
-        this.rndmEmail() * 10;
+        this.rndmEmail();
     },
     methods: {
         rndmEmail: function() {
-            let counter = 0;
-            while  ( counter < 10 ) {
+            while  ( this.counter < 10 ) {
                 axios
                     .get("https://flynn.boolean.careers/exercises/api/random/mail")
                     .then((resp) => {
                             console.log(resp);
                             this.email.push(resp.data.response);
                             })
-                    counter ++
+                    this.counter ++
                 }
             }
         }
-}).mount('#app')
+    }).mount('#app')

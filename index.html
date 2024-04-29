@@ -10,7 +10,7 @@
 <body>
     <div id="app">
         <h1>Queste sono 10 mail random</h1>
-        <ul>
+        <ul v-if="email.length === 10">
             <li v-for="(items, index) in email">{{ email[index] }}</li>
         </ul>
     </div>
