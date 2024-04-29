@@ -3,20 +3,24 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            email: "",
+            email: [],
         };
     },
     created(){
-        this.rndmEmail();
+        this.rndmEmail() * 10;
     },
     methods: {
         rndmEmail: function() {
-            axios
-                .get("https://flynn.boolean.careers/exercises/api/random/mail")
-                .then((resp) => {
-                    console.log(resp);
-                    this.email = resp.data.response;
-                })
+            let counter = 0;
+            while  ( counter < 10 ) {
+                axios
+                    .get("https://flynn.boolean.careers/exercises/api/random/mail")
+                    .then((resp) => {
+                            console.log(resp);
+                            this.email.push(resp.data.response);
+                            })
+                    counter ++
+                }
             }
         }
 }).mount('#app')
