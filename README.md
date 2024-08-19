@@ -1,7 +1,5 @@
 ### Descrizione
 
-Attraverso l'apposita API di Boolean
+The program using the appropriate Boolean API:
 https://flynn.boolean.careers/exercises/api/random/mail
-generare 10 indirizzi email e stamparli in pagina all'interno di una lista.
-Bonus
-Far comparire gli indirizzi email solamente quando sono stati tutti generati.
+generate 10 email addresses and display them on the page inside a list the email addresses appear only after they have all been generated.
